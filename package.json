@@ -1,0 +1,23 @@
+{
+  "name": "test-automation",
+  "version": "0.0.0",
+  "bugs": "https://github.com/IBM/test-automation/issues",
+  "description": "Monorepo containing automated testing and tools for Carbon Shared Tests and Exported Tests",
+  "main": "index.js",
+  "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/test-automation.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^12"
+  },
+  "scripts": {
+    "test": "true"
+  },
+  "devDependencies": {
+    "@lerna/bootstrap": "3.21.0",
+    "lerna": "3.22.0"
+  }
+}
