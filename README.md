@@ -26,4 +26,4 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 
 [Exported Tests]: https://github.com/IBM/exported-tests
-[Carbon Shared Tests]: /carbon-design-system/carbon-shared-tests
+[Carbon Shared Tests]: https://github.com/IBM/carbon-design-system/carbon-shared-tests
