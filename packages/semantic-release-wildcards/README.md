@@ -1,13 +1,11 @@
 Semantic Release Wildcards
 ---
 
-[semantic-release] plugin to convert dependency wildcards in a module's package.json file.
+[semantic-release] plugin to convert dependency wildcards into the latest released version number within a module's package.json file.
 
-| Step               | Description                                                                                                                                   |                                                                     |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
-| `prepare`          | Update the `package.json` version and [create](https://docs.npmjs.com/cli/pack) the npm package tarball.                                      |                                                                     |
-
-[semantic-release]: https://semantic-release.gitbook.io/semantic-release/
+| Step               | Description|
+|--------------------|---------------------------------------------------------------------|
+| `prepare`          | Update the `package.json` version and [create](https://docs.npmjs.com/cli/pack) the npm package tarball.|
 
 ## Usage
 
@@ -29,3 +27,6 @@ The plugin can be configured in the [**semantic-release** configuration file](ht
   },
 }
 ```
+
+
+[semantic-release]: https://semantic-release.gitbook.io/semantic-release/

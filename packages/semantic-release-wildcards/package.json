@@ -2,8 +2,8 @@
   "name": "semantic-release-wildcards",
   "version": "0.0.0",
   "bugs": "https://github.com/IBM/test-automation/issues",
-  "description": "Monorepo containing automated testing and tools for Carbon Shared Tests and Exported Tests",
-  "main": "src/index.js",
+  "description": "semantic-release plugin to convert dependency wildcards into the latest released version number within a module's package.json file.",
+  "main": "lib/index.js",
   "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
   "repository": {
     "type": "git",
