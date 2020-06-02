@@ -1,7 +1,6 @@
 Semantic Release Wildcards
 ---
 
-Plugin for [semantic-release] whic
 [semantic-release] plugin to convert dependency wildcards in a module's package.json file.
 
 | Step               | Description                                                                                                                                   |                                                                     |
