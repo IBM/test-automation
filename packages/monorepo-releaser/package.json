@@ -1,0 +1,33 @@
+{
+  "name": "monorepo-releaser",
+  "version": "0.0.0",
+  "bugs": "https://github.com/IBM/test-automation/issues",
+  "description": "Tools and configs for releasing monorepo packages via semantic-release",
+  "main": "index.js",
+  "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/test-automation.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^12"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release --debug",
+    "test": "true"
+  },
+  "release": {
+    "extends": [
+      "semantic-release-monorepo",
+      "./release.config"
+    ]
+  },
+  "dependencies": {
+    "semantic-release": "17.0.8",
+    "semantic-release-monorepo": "7.0.2"
+  },
+  "devDependencies": {
+    "semantic-release-wildcards": "*"
+  }
+}
