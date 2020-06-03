@@ -27,7 +27,7 @@
 /**
  * Semantic Release options object. See
  * {@link https://semantic-release.gitbook.io/semantic-release/usage/configuration#branches|semantic-release options object}
- * note: this typedef does not contain all avilable options from semantic-release, just PAL-relevant properties.
+ * note: this typedef does not contain all available options from semantic-release, just relevant properties.
  * See semantic-relase docs for more config options.
  * @typedef {object} semrelOptions
  * @property {object} repositoryUrl - from package.json
