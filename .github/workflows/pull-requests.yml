@@ -23,6 +23,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install --ignore-engines
     - run: yarn test
+    ## store the install
+    - uses: actions/upload-artifact@v2
+      with:
+        name: env
+        path: ./**
+
 
   deploy:
     runs-on: ubuntu-latest
@@ -30,5 +36,9 @@ jobs:
     needs: build
 
     steps:
+    ## get the install
+    - uses: actions/download-artifact@v2
+      with:
+        name: env
     ## on pull-requests, won't run, but will show what settings are passed in
     - run: yarn semantic-release
