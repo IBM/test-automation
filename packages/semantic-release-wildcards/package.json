@@ -14,6 +14,16 @@
     "node": "^12"
   },
   "scripts": {
+    "semantic-release": "semantic-release",
     "test": "true"
+  },
+  "release": {
+    "extends": [
+      "semantic-release-monorepo",
+      "./release.config"
+    ]
+  },
+  "peerDependencies": {
+    "monorepo-releaser": "*"
   }
 }
