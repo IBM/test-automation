@@ -100,7 +100,7 @@ const getPkgContents = path => {
  */
 const prepare = (pluginConfig, context) => {
   if (!context.nextRelease) return;
-  if (!Array.isArray(pluginConfig.wildcards)) return;
+  if (!Array.isArray(pluginConfig.packages)) return;
 
   // release channel for the release being prepared
   const releaseChannel = context.nextRelease.channel;
@@ -110,7 +110,7 @@ const prepare = (pluginConfig, context) => {
   if ((context.nextRelease.channel === context.branch.channel) && context.branch.upstream) upstreamChannel = context.branch.upstream;
 
   // packages will contain version numbers after `getReleases` queries versions from the npm registry
-  const packages = getReleases(pluginConfig.wildcards) || [];
+  const packages = getReleases(pluginConfig.packages) || [];
 
   // this package's package.json config
   const pkgPath = path.join(context.cwd, 'package.json');
