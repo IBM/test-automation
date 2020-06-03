@@ -14,10 +14,14 @@
     "node": "^12"
   },
   "scripts": {
-    "test": "true"
+    "test": "true",
+    "semrel-releaser": "lerna exec --scope=monorepo-releaser yarn semantic-release --stream",
+    "semrel-wildcards": "lerna exec --scope=semantic-release-wildcards yarn semantic-release --stream",
+    "semantic-release": "yarn semrel-releaser && yarn semrel-wildcards"
   },
+  "private": true,
+  "workspaces": ["packages/*"],
   "devDependencies": {
-    "@lerna/bootstrap": "3.21.0",
     "lerna": "3.22.0"
   }
 }
