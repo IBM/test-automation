@@ -1,6 +1,6 @@
 Monorepo releaser
 ---
 
-Configurations for [semantic-release] used by the ibm/test-automation repository plugin to convert dependency wildcards into the latest released version number within a module's package.json file.
+Configurations for [semantic-release] used by the ibm/test-automation repository to unify release configurations, dependencies, and functionality into a single place.
 
 [semantic-release]: https://semantic-release.gitbook.io/semantic-release/
