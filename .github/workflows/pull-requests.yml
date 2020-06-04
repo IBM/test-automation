@@ -58,5 +58,6 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
+    ## test: do comments block functionality?
     - run: yarn install
     - run: yarn semantic-release
