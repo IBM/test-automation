@@ -58,6 +58,6 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    ## on pull-requests, won't run, but will show what settings are passed in
+
     - run: yarn install
     - run: yarn semantic-release
