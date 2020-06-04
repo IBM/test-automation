@@ -14,7 +14,7 @@
     "node": "^12"
   },
   "scripts": {
-    "test": "true",
+    "test": "lerna exec --scope={semantic-release-wildcards,monorepo-releaser} npm test",
     "semrel-releaser": "lerna exec --scope=monorepo-releaser yarn semantic-release --stream",
     "semrel-wildcards": "lerna exec --scope=semantic-release-wildcards yarn semantic-release --stream",
     "semantic-release": "yarn semrel-releaser && yarn semrel-wildcards"
