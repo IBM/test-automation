@@ -57,7 +57,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-pr-
 
-    - run: yarn install
+    - run: yarn --freeze-lockfile
     - run: yarn test
 
   deploy:
@@ -84,4 +84,3 @@ jobs:
 
     - run: yarn install
     - run: echo "placeholder for yarn semantic-release"
-
