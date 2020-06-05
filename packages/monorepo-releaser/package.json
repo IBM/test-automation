@@ -1,9 +1,9 @@
 {
-  "name": "semantic-release-wildcards",
+  "name": "monorepo-releaser",
   "version": "0.0.0",
   "bugs": "https://github.com/IBM/test-automation/issues",
-  "description": "semantic-release plugin to convert dependency wildcards into the latest released version number within a module's package.json file.",
-  "main": "lib/index.js",
+  "description": "Tools and configs for releasing monorepo packages via semantic-release",
+  "main": "index.js",
   "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
     "node": "^12"
   },
   "scripts": {
-    "semantic-release": "semantic-release",
+    "semantic-release": "semantic-release --debug",
     "test": "true"
   },
   "release": {
@@ -23,7 +23,9 @@
       "./release.config"
     ]
   },
-  "peerDependencies": {
-    "monorepo-releaser": "*"
+  "dependencies": {
+    "semantic-release": "17.0.8",
+    "semantic-release-monorepo": "7.0.2",
+    "semantic-release-wildcards": "*"
   }
 }
