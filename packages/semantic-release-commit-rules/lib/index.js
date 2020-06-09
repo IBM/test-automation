@@ -12,6 +12,10 @@
  */
 const defaultConfig = require('defaults');
 const getReleaseRules = require('./commit-analyzer');
+const notes = require('./generate-notes');
 
-module.exports.defaultConfig = defaultConfig;
-module.exports.getReleaseRules = getReleaseRules;
+module.exports = {
+  defaultConfig,
+  getReleaseRules,
+  ...notes
+};
