@@ -10,7 +10,7 @@
  */
 
 /**
- * Converts a commit message configuration object in to a Semantic Release
+ * Converts a commit message configuration object into a semantic release
  * releaseRules array
  * @param {commitConfigs} config - see typedef in `defaults.js`
  * @returns {object[]} releaseRules array;
