@@ -17,35 +17,20 @@ describe('getReleaseRules exists', () => {
 
 describe('getReleaseRules generates valid releaseRules arrays', () => {
   const releaseRules = getReleaseRules(config);
+  const expected = [
+    { type: 'feat', release: 'minor' },
+    { type: 'perf', release: 'patch' },
+    { type: 'perf', scope: 'dep-*', release: 'minor' },
+    { type: 'refactor', release: false },
+    { scope: 'break-*', release: 'major' },
+    { scope: 'minor-*', release: 'minor' },
+  ];
 
   it('creates the correct number of rules', () => {
     expect(releaseRules).to.have.a.lengthOf(6);
   });
 
-  it('creates the correct type', () => {
-    expect(releaseRules[0].type).to.equal('feat');
-    expect(releaseRules[1].type).to.equal('perf');
-    expect(releaseRules[2].type).to.equal('perf');
-    expect(releaseRules[3].type).to.equal('refactor');
-    expect(releaseRules[4].type).to.be.undefined;
-    expect(releaseRules[5].type).to.be.undefined;
-  });
-
-  it('creates the correct scope', () => {
-    expect(releaseRules[0].scope).to.be.undefined;
-    expect(releaseRules[1].scope).to.be.undefined;
-    expect(releaseRules[2].scope).to.equal('dep-*');
-    expect(releaseRules[3].scope).to.be.undefined;
-    expect(releaseRules[4].scope).to.equal('break-*');
-    expect(releaseRules[5].scope).to.equal('minor-*');
-  });
-
-  it('creates the correct release version', () => {
-    expect(releaseRules[0].release).to.equal('minor');
-    expect(releaseRules[1].release).to.equal('patch');
-    expect(releaseRules[2].release).to.equal('minor');
-    expect(releaseRules[3].release).to.equal(false);
-    expect(releaseRules[4].release).to.equal('major');
-    expect(releaseRules[5].release).to.equal('minor');
+  it('creates the correct releaseRules array', () => {
+    expect(releaseRules).to.deep.equal(expected)
   });
 });
