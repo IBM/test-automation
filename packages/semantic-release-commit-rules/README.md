@@ -1,6 +1,6 @@
 # Project Overview
 
-Tools for customizing [semantic release's default plugins](https://semantic-release.gitbook.io/semantic-release/usage/plugins#plugins) related to commit messages. By default semantic release uses Angular's commit conventions during the analyzeCommits and generateNotes plugins. This tool allows users to write a configuration object to overwrite the default rules and provides functions to add the configuration support to the existing semantic release plugins.
+Tools for customizing [semantic release's default plugins](https://semantic-release.gitbook.io/semantic-release/usage/plugins#plugins) related to commit messages. By default semantic release uses Angular's commit conventions. This tool allows users to integrate a non-standard rules configuration which replaces the default commit message rules during the  _Analyze commits_ and _Generate notes_ [release steps](https://semantic-release.gitbook.io/semantic-release/#release-steps).
 
 ## Getting started
 
