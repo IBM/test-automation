@@ -15,8 +15,8 @@
   },
   "scripts": {
     "semantic-release": "semantic-release --debug",
-    "w3c-setup": "w3c-validation docker-setup",
-    "test": "yarn w3c-setup && npx mocha ./**/tests/*.js"
+    "setup": "w3c-validation docker-setup",
+    "test": "yarn setup && npx mocha ./**/tests/*.js"
   },
   "release": {
     "extends": [
