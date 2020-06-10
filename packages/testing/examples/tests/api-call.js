@@ -10,7 +10,6 @@
  * @module testing/examples/tests/api-call
  */
 const expect = require('chai').expect;
-const nock = require('nock');
 
 const { getCatFacts, randomCatFact } = require('../api-call');
 const fixtures = require('./fixtures/cat-facts-api');
