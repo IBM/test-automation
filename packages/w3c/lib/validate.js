@@ -14,7 +14,7 @@ const fetch = require('node-fetch');
 const FormData = require('form-data');
 
 const encode = require('./error-encoder').encode;
-const validateDefaults = require('./defaults').validate;
+const defaults = require('./defaults');
 
 /**
  * W3C validator error message object breakdown
@@ -96,7 +96,7 @@ const addHTMLDonut = html => {
  *   })
  */
 const validate = (html, config = {}) => {
-  const opts = Object.assign({}, validateDefaults, config);
+  const opts = Object.assign({}, defaults, config);
   const form = new FormData();
   // always get `json` response from W3C
   form.append('out', 'json');

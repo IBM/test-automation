@@ -12,7 +12,7 @@
 const compose = require('docker-compose');
 const fetch = require('node-fetch');
 
-const validateDefaults = require('../defaults').validate;
+const defaults = require('../defaults');
 
 /**
  * Checks if the URL is available and returns the contents
@@ -45,14 +45,14 @@ const verifyUrl = async (url) => {
  */
 const containerStartupBuffer = () => {
   return new Promise(res => {
-    const url = validateDefaults.url;
+    const url = defaults.url;
 
     /**
      * Checks if the URL is available and resolves this
      *    promise if `node-fetch` returns content
      */
     const verifyUrlResolver = async () => {
-      const response = await fetch(validateDefaults.url);
+      const response = await fetch(defaults.url);
       const body = await response.text();
 
       // if it gets body, resolves the promise
@@ -76,12 +76,12 @@ const containerStartupBuffer = () => {
  *    accurate.
  */
 const composer = async () => {
-  const running = await verifyUrl(validateDefaults.url);
+  const running = await verifyUrl(defaults.url);
   if (running) return Promise.resolve(true);
 
   return compose.upAll({ cwd: __dirname, log: true })
     .then(() => {
-      return containerStartupBuffer(validateDefaults.url)
+      return containerStartupBuffer(defaults.url)
     })
     .then(resp => {
       if (resp.includes('Ready to check  - Nu Html Checker')) return true;

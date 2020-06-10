@@ -30,10 +30,10 @@
  * @type {w3c-validation.w3cConfig}
  * @typicalname Default config for validate function
  */
-const validate = {
+const defaults = {
   url: 'http://127.0.0.1:8888',
   wrapHTML: true,
   response: '',
 };
 
-module.exports.validate = validate;
+module.exports = defaults;
