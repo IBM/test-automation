@@ -1,0 +1,29 @@
+{
+  "name": "handlebars-helper-attrs",
+  "version": "0.0.0",
+  "bugs": "https://github.com/IBM/test-automation/issues",
+  "description": "Handlebars helper which will generate an HTML element's attributes from an object of attributes",
+  "main": "lib/index.js",
+  "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/test-automation.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^12"
+  },
+  "scripts": {
+    "test": "npx mocha ./**/tests/*.js"
+  },
+  "release": {
+    "extends": [
+      "semantic-release-monorepo",
+      "./release.config"
+    ]
+  },
+  "peerDependencies": {
+    "monorepo-releaser": "*",
+    "test-automation-testing": "*"
+  }
+}
