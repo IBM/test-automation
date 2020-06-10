@@ -1,0 +1,14 @@
+##
+# Copyright IBM Corp. 2020
+#
+# This source code is licensed under the Apache-2.0 license found in the
+# LICENSE file in the root directory of this source tree.
+##
+version: '3.7'
+
+services:
+  validator:
+    image: validator/validator
+    command: ['java','-cp','/vnu.jar','nu.validator.servlet.Main','8888']
+    ports:
+      - 127.0.0.1:8888:8888

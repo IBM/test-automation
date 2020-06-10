@@ -30,7 +30,7 @@ const catFactAssertions = fact => {
   expect(fact.upvotes).to.be.a('number')
 }
 
-describe('Basic example', () => {
+describe('API calls example', () => {
   describe('All functions exist', () => {
     it('must have functions', () => {
       expect(getCatFacts).to.exist;
