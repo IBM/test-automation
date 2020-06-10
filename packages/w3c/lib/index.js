@@ -18,6 +18,7 @@ const errors = require('./error-encoder');
  * Functionality exported by the W3C HTML validation tool
  * @todo auto-docs to fill in README
  * @todo add `exported-test`
+ * @todo CLI function to call validation via command line
  */
 const w3c = {
   addHTMLDonut: validate.addHTMLDonut,
