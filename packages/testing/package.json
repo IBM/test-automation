@@ -1,0 +1,27 @@
+{
+  "name": "test-automation-testing",
+  "version": "0.0.0",
+  "bugs": "https://github.com/IBM/test-automation/issues",
+  "description": "Non-released Test Automation package for local and CI/CD-based testing setup",
+  "main": "lib/index.js",
+  "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/test-automation.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^12"
+  },
+  "scripts": {
+    "test": "npx mocha ./**/tests/*.js"
+  },
+  "dependencies": {
+    "capture-console": "1.0.1",
+    "chai": "4.2.0",
+    "exported-tests": "1.1.1",
+    "mocha": "7.2.0",
+    "nock": "12.0.3",
+    "proxyquire": "2.1.3"
+  }
+}
