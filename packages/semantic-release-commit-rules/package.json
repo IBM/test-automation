@@ -1,0 +1,30 @@
+{
+  "name": "semantic-release-commit-rules",
+  "version": "0.0.0",
+  "bugs": "https://github.com/IBM/test-automation/issues",
+  "description": "tool for adding custom commit rules to semantic-release's default Angular commit convention setup.",
+  "main": "lib/index.js",
+  "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/test-automation.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^12"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "test": "mocha lib/**/tests/*.js"
+  },
+  "release": {
+    "extends": [
+      "semantic-release-monorepo",
+      "./release.config"
+    ]
+  },
+  "peerDependencies": {
+    "monorepo-releaser": "*",
+    "test-automation-testing": "*"
+  }
+}

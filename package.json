@@ -17,10 +17,13 @@
     "test": "lerna exec npm test",
     "semrel-releaser": "lerna exec --scope=monorepo-releaser yarn semantic-release --stream",
     "semrel-wildcards": "lerna exec --scope=semantic-release-wildcards yarn semantic-release --stream",
-    "semantic-release": "yarn semrel-releaser && yarn semrel-wildcards"
+    "semrel-commits": "lerna exec --scope=semantic-release-commit-rules yarn semantic-release --stream",
+    "semantic-release": "yarn semrel-releaser && yarn semrel-wildcards && yarn semrel-commits"
   },
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "lerna": "3.22.0"
   }
