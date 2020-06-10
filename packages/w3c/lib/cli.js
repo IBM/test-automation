@@ -23,7 +23,7 @@ const docker = () => {
 }
 
 /**
- * Object contains set of a non-flag arguments (key) that correspond to
+ * Object contains set of non-flag arguments (key) that correspond to
  *    a function (value)
  */
 const commands = {

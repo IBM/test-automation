@@ -40,7 +40,7 @@ const verifyUrl = async (url) => {
 
 /**
  * Extra checking to ensure the W3C container is running.
- * @returns {<string>Promise} either `false` or the contents found at the URL
+ * @returns {<string>Promise} the contents found at the URL
  * @private
  */
 const containerStartupBuffer = () => {
@@ -49,7 +49,7 @@ const containerStartupBuffer = () => {
 
     /**
      * Checks if the URL is available and resolves this
-     *    promise when if it returns content
+     *    promise if `node-fetch` returns content
      */
     const verifyUrlResolver = async () => {
       const response = await fetch(validateDefaults.url);

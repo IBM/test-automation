@@ -14,7 +14,7 @@
  * W3C validator configuration property definitions
  * @typedef {object} w3cConfig
  * @property {string} [url=http://127.0.0.1:8888] - URL for the W3C validator
- * @property {boolean} [wrapHTML=true] - flag to determine whether to wrap the
+ * @property {boolean} [wrapHTML=true] - flag to have the validator wrap a passed in HTML fragment to make it a valid HTML document for testing.
  *      HTML to-be-tested
  * @property {string} [response=''] - flag to determine type of response;
  *    options:
