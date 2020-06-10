@@ -13,6 +13,7 @@
 const composer = require('./docker/composer');
 const validate = require('./validate');
 const errors = require('./error-encoder');
+const addHTMLDonut = require('./add-html-donut');
 
 /**
  * Functionality exported by the W3C HTML validation tool
@@ -21,11 +22,10 @@ const errors = require('./error-encoder');
  * @todo CLI function to call validation via command line
  */
 const w3c = {
-  addHTMLDonut: validate.addHTMLDonut,
+  addHTMLDonut,
   composer,
   ...errors,
   validate,
 };
-delete w3c.validate.addHTMLDonut;
 
 module.exports = w3c;

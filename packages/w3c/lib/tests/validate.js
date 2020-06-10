@@ -8,7 +8,8 @@
 const expect = require('chai').expect;
 const nock = require('nock');
 
-const w3c = require('../');
+const validate = require('../validate');
+const addHTMLDonut = require('../add-html-donut');
 const fixtures = require('./fixtures');
 
 const mockW3CValidator = () => {
@@ -43,12 +44,8 @@ const fourErrorsAssertions = err => {
 describe('W3C HTML testing', () => {
   describe('All functions exist', () => {
     it('must have functions', () => {
-      expect(w3c.validate).to.exist;
-      expect(w3c.validate).to.be.a('function');
-      expect(w3c.addHTMLDonut).to.exist;
-      expect(w3c.addHTMLDonut).to.be.a('function');
-      expect(w3c.composer).to.exist;
-      expect(w3c.composer).to.be.a('function');
+      expect(validate).to.exist;
+      expect(validate).to.be.a('function');
     });
   });
 
@@ -57,8 +54,7 @@ describe('W3C HTML testing', () => {
       mockW3CValidator();
     });
     it('Allows different validator URL', () => {
-      return w3c
-        .validate(fixtures.zeroErrors.fixture, {
+      return validate(fixtures.zeroErrors.fixture, {
           url: 'https://fake.validator',
         })
         .then(res => {
@@ -66,15 +62,13 @@ describe('W3C HTML testing', () => {
         });
     });
     it('Can return unencoded error message', () => {
-      return w3c
-        .validate(fixtures.fourErrors.fixture, {
+      return validate(fixtures.fourErrors.fixture, {
           response: false,
         })
         .then(res => fourErrorsAssertions(res));
     });
     it('Allows full W3C response', () => {
-      return w3c
-        .validate(fixtures.fourErrors.fixture, {
+      return validate(fixtures.fourErrors.fixture, {
           response: 'full',
         })
         .then(res => {
@@ -84,14 +78,13 @@ describe('W3C HTML testing', () => {
           expect(res.source.encoding).to.exist;
           expect(res.source.code).to.exist;
           expect(res.source.code).to.equal(
-            w3c.addHTMLDonut(fixtures.fourErrors.fixture)
+            addHTMLDonut(fixtures.fourErrors.fixture)
           );
           fourErrorsAssertions(res.messages);
         });
     });
     it('Allows skipping the HTML wrapper', () => {
-      return w3c
-        .validate(fixtures.htmlFile.fixture, {
+      return validate(fixtures.htmlFile.fixture, {
           wrapHTML: false,
           response: 'encoded',
         })
@@ -106,7 +99,7 @@ describe('W3C HTML testing', () => {
 
   describe('Test HTML for conformance to W3C, return encoded errors', () => {
     it('Correctly determines HTML non-conformance', () => {
-      return w3c.validate(fixtures.fourErrors.fixture, {
+      return validate(fixtures.fourErrors.fixture, {
         response: 'encoded',
       }).then(res => {
         expect(res).to.be.a('string');
@@ -116,7 +109,7 @@ describe('W3C HTML testing', () => {
       });
     });
     it('Correctly determines HTML conformance', () => {
-      return w3c.validate(fixtures.zeroErrors.fixture).then(res => {
+      return validate(fixtures.zeroErrors.fixture).then(res => {
         expect(res).to.be.true;
       });
     });

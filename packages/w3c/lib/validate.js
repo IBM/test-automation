@@ -15,6 +15,7 @@ const FormData = require('form-data');
 
 const encode = require('./error-encoder').encode;
 const defaults = require('./defaults');
+const addHTMLDonut = require('./add-html-donut');
 
 /**
  * W3C validator error message object breakdown
@@ -50,16 +51,6 @@ const defaults = require('./defaults');
  * @property {w3c-validation.source} source - details on tested content
  * @typicalname Typedef: W3C validator response
  */
-
-/**
- * Creates a full HTML document by wrapping a DOMstring in a W3C-compliant HTML donut.
- * @param  {DOMstring} html - HTML element to be injected into doc
- * @return {DOMstring} HTML element wrapped in a valid HTML document
- * @typicalname Add HTML donut
- */
-const addHTMLDonut = html => {
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Test</title></head><body>${html}</body></html>`;
-};
 
 /**
  * W3C validator for a given HTML snippet. Optionally wraps the snippet in W3C-valid HTML
@@ -126,4 +117,3 @@ const validate = (html, config = {}) => {
 };
 
 module.exports = validate;
-module.exports.addHTMLDonut = addHTMLDonut;
