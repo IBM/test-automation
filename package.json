@@ -4,6 +4,7 @@
   "bugs": "https://github.com/IBM/test-automation/issues",
   "description": "Monorepo containing automated testing and tools for Carbon Shared Tests and Exported Tests",
   "main": "index.js",
+  "files": ["lib/**/*"],
   "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
   "repository": {
     "type": "git",
