@@ -19,8 +19,6 @@ const stringifyAttributes = require('stringify-attributes');
  * @returns {string} the attributes as html-attributes
  */
 module.exports = (input = {}) => {
-  let attributes = ' ';
-
   if (typeof input !== 'object' || Array.isArray(input)) {
     let itype = typeof input;
     if (Array.isArray(input)) {
