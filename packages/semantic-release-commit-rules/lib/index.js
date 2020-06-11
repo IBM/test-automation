@@ -39,7 +39,8 @@ const generateCommitAnalyzerConfig = (config) => {
  * @param {string} [host=https://github.com] - host URL option
  * @returns {object} release-notes-generator configuration object with the `preset`, `host`, and `writerOpts.transform` properties
  *    see https://github.com/semantic-release/release-notes-generator#configuration for more configuration details
- */
+  * @todo Add tests for this function to verify clarity of expectations
+  */
 const generateReleaseNotesConfig = (config, host = 'https://github.com') => {
   return {
     preset: 'angular',
