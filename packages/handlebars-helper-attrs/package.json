@@ -25,5 +25,8 @@
   "peerDependencies": {
     "monorepo-releaser": "*",
     "test-automation-testing": "*"
+  },
+  "dependencies": {
+    "stringify-attributes": "2.0.0"
   }
 }

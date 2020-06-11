@@ -73,4 +73,41 @@ describe('Attributes handlebars helper', () => {
     expect(response).to.include('one="0"');
     expect(response).to.include('three="0"');
   });
+
+  it('attrs allows atttributes with no value', () => {
+    const obj = {
+      noValueTrue: true,
+      noValueFalse: false,
+      noValueNull: null,
+      noValueUndefined: undefined,
+    };
+
+    const response = attrs(obj);
+
+    expect(response).to.be.a('string');
+    expect(response).to.include(' noValueTrue');
+    expect(response).to.not.include('noValueFalse');
+    expect(response).to.include('noValueNull="null"');
+    expect(response).to.include('noValueUndefined="undefined"');
+  });
+
+  it('attrs allows multiple types of values', () => {
+    const objectOfAttributes = {
+      id: 1234, // allows numbers
+      disabled: true, // no attributes
+      hidden: false, // ignore false
+      class: ['class-1', 'class-2'], // arrays of content
+      'data-emoji': '🦄', // even emojis!
+    };
+
+    const response = attrs(objectOfAttributes);
+
+    expect(response).to.be.a('string');
+    expect(response).to.include('id="1234"');
+    expect(response).to.include(' disabled ');
+    expect(response).to.include('class="class-1 class-2"');
+    expect(response).to.not.include('hidden');
+    expect(response).to.include('data-emoji="🦄"');
+
+  })
 });

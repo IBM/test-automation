@@ -10,14 +10,7 @@
  *    from an object of attributes
  * @module handlebars-helper-attrs
  */
-
-/**
- * Determines if a variable is a number
- * @param {number} value - item that will be tested for whether or not
- *    it is a number
- * @returns {boolean} true is a number, false is not
- */
-const isNumber = value => value instanceof Number || typeof value === 'number';
+const stringifyAttributes = require('stringify-attributes');
 
 /**
  * Handlebars helper which will allow undefined attributes
@@ -39,12 +32,5 @@ module.exports = (input = {}) => {
     return '';
   }
 
-  Object.keys(input).forEach(key => {
-    attributes +=
-      !isNumber(input[key]) && (!input[key] || input[key] === null)
-        ? `${key} `
-        : `${key}="${input[key].toString()}" `;
-  });
-
-  return attributes;
+  return stringifyAttributes(input);
 };
