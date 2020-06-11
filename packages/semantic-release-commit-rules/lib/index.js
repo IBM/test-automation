@@ -20,7 +20,8 @@ const notes = require('./generate-notes');
  * @param {commitConfigs} config - see typedef in ./defaults.js
  * @returns {object} commit-analyzer configuration object with the `preset` and `releaseRules` properties
  *    see https://github.com/semantic-release/commit-analyzer#configuration for more configuration details
- */
+  * @todo add unit tests for this function
+  */
 const generateCommitAnalyzerConfig = (config) => {
   return {
     preset: 'angular',
