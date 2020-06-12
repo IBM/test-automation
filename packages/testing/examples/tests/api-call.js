@@ -10,7 +10,6 @@
  * @module testing/examples/tests/api-call
  */
 const expect = require('chai').expect;
-const nock = require('nock');
 
 const { getCatFacts, randomCatFact } = require('../api-call');
 const fixtures = require('./fixtures/cat-facts-api');
@@ -30,7 +29,7 @@ const catFactAssertions = fact => {
   expect(fact.upvotes).to.be.a('number')
 }
 
-describe('Basic example', () => {
+describe('API calls example', () => {
   describe('All functions exist', () => {
     it('must have functions', () => {
       expect(getCatFacts).to.exist;

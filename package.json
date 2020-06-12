@@ -4,6 +4,7 @@
   "bugs": "https://github.com/IBM/test-automation/issues",
   "description": "Monorepo containing automated testing and tools for Carbon Shared Tests and Exported Tests",
   "main": "index.js",
+  "files": ["lib/**/*"],
   "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
   "repository": {
     "type": "git",
@@ -14,7 +15,7 @@
     "node": "^12"
   },
   "scripts": {
-    "test": "lerna exec --scope={test-automation-testing,semantic-release-wildcards,monorepo-releaser,semantic-release-commit-rules} npm test",
+    "test": "lerna exec npm test --stream",
     "semrel-releaser": "lerna exec --scope=monorepo-releaser yarn semantic-release --stream",
     "semrel-wildcards": "lerna exec --scope=semantic-release-wildcards yarn semantic-release --stream",
     "semrel-commits": "lerna exec --scope=semantic-release-commit-rules yarn semantic-release --stream",
