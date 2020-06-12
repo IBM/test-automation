@@ -15,7 +15,7 @@
     "node": "^12"
   },
   "scripts": {
-    "test": "lerna exec npm test",
+    "test": "lerna exec npm test --stream",
     "semrel-releaser": "lerna exec --scope=monorepo-releaser yarn semantic-release --stream",
     "semrel-wildcards": "lerna exec --scope=semantic-release-wildcards yarn semantic-release --stream",
     "semrel-commits": "lerna exec --scope=semantic-release-commit-rules yarn semantic-release --stream",
