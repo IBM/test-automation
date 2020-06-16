@@ -1,0 +1,37 @@
+{
+  "name": "auto-docs",
+  "version": "0.0.0",
+  "bugs": "https://github.com/IBM/test-automation/issues",
+  "description": "Automated code documentation",
+  "main": "lib/index.js",
+  "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IBM/test-automation.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^12"
+  },
+  "scripts": {
+    "test": "npx mocha ./**/tests/*.js",
+    "docs": "auto-docs createDocFile"
+  },
+  "release": {
+    "extends": [
+      "semantic-release-monorepo",
+      "./release.config"
+    ]
+  },
+  "devDependencies": {
+    "monorepo-releaser": "*",
+    "test-automation-testing": "*"
+  },
+  "dependencies": {
+    "jsdoc-to-markdown": "6.0.1",
+    "meow": "7.0.1"
+  },
+  "bin": {
+    "auto-docs": "./cli.js"
+  }
+}
