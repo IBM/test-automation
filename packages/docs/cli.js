@@ -14,15 +14,12 @@ const fs = require('fs');
 const meow = require('meow');
 const jsdoc2md = require('jsdoc-to-markdown');
 
-const jsdocConfig = require('./jsdoc-conf');
-
 /**
  * Creates a markdown file containing documentation rendered from a set of files' JSDoc content.
  *    Other than `data.dest` all other configurations are documented in the
  *    [jsdoc2md API docs](https://github.com/jsdoc2md/jsdoc-to-markdown/blob/master/docs/API.md#jsdoc2mdrenderoptions--promise)
  * @param {object} [data]
- * @param {string} [data.dest] - file where docs should be rendered
- *    for the repository we are cloning (see typedef)
+ * @param {string} [data.dest] - full path to destination file for rendered doc
  */
 const createDocFile = data => {
   const opts = data;
@@ -79,7 +76,7 @@ const actions = (input, flags) => {
  */
 const cli = meow(`
 Usage
-  $ Auto docs <action>
+  $ auto-docs <action>
 
 Examples
   $ auto-docs createDocFile
