@@ -1,5 +1,5 @@
 {
-  "name": "auto-docs",
+  "name": "auto-jsdocs",
   "version": "0.0.0",
   "bugs": "https://github.com/IBM/test-automation/issues",
   "description": "Automated code documentation",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "npx mocha ./**/tests/*.js",
-    "docs": "auto-docs createDocFile"
+    "docs": "auto-jsdocs createDocFile"
   },
   "release": {
     "extends": [
@@ -32,6 +32,6 @@
     "meow": "7.0.1"
   },
   "bin": {
-    "auto-docs": "./cli.js"
+    "auto-jsdocs": "./cli.js"
   }
 }

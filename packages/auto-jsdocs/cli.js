@@ -82,7 +82,7 @@ Usage
   $ Auto docs <action>
 
 Examples
-  $ auto-docs createDocFile
+  $ auto-jsdocs createDocFile
   // uses jsdoc-to-markdown, combined with the typedef-expander plugin, to create
   //    markdown docs from JSDocs comments
 `, {
