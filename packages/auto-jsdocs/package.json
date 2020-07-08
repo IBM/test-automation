@@ -1,8 +1,8 @@
 {
-  "name": "w3c-validation",
+  "name": "auto-jsdocs",
   "version": "0.0.0",
   "bugs": "https://github.com/IBM/test-automation/issues",
-  "description": "Validator which uses the W3C's Nu Html Checker in a docker container to test raw HTML and CSS for conformance to W3C",
+  "description": "Automated code documentation",
   "main": "lib/index.js",
   "author": "IBM Watson Health Pattern & Asset Library (https://github.com/orgs/IBM/teams/whpal/members)",
   "repository": {
@@ -14,9 +14,8 @@
     "node": "^12"
   },
   "scripts": {
-    "semantic-release": "semantic-release --debug",
-    "setup": "w3c-validation docker-setup",
-    "test": "yarn setup && npx mocha ./**/tests/*.js"
+    "test": "npx mocha ./**/tests/*.js",
+    "docs": "auto-jsdocs createDocFile"
   },
   "release": {
     "extends": [
@@ -29,12 +28,10 @@
     "test-automation-testing": "*"
   },
   "dependencies": {
-    "docker-compose": "0.23.4",
-    "form-data": "3.0.0",
-    "meow": "7.0.1",
-    "node-fetch": "2.6.0"
+    "jsdoc-to-markdown": "6.0.1",
+    "meow": "7.0.1"
   },
   "bin": {
-    "w3c-validation": "./lib/cli.js"
+    "auto-jsdocs": "./cli.js"
   }
 }
