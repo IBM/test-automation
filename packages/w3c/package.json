@@ -32,7 +32,7 @@
     "docker-compose": "0.23.4",
     "form-data": "3.0.0",
     "meow": "7.0.1",
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.1"
   },
   "bin": {
     "w3c-validation": "./lib/cli.js"
